@@ -9,9 +9,9 @@ public class PlayerUIManager : MonoBehaviour
     public Text atText;
 
 
-    public void UpdateUI()
+    public void UpdateUI(PlayerManager player)
     {
-        hpText.text = string.Format("HP : {0}", 80);
+        hpText.text = string.Format("HP : {0}", player.hp);
     }
 
     // Start is called before the first frame update

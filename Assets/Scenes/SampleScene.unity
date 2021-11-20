@@ -1208,6 +1208,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4995a5a7cad0b148a042c7eb2bba2de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerUI: {fileID: 1016328303}
+  enemyUI: {fileID: 859262271}
   player: {fileID: 447503484}
   enemy: {fileID: 1276386869}
 --- !u!4 &1334933345

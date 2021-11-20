@@ -5,6 +5,8 @@ using UnityEngine;
 // ‘Îí‚ÌŠÇ—
 public class BattleManager : MonoBehaviour
 {
+    public PlayerUIManager playerUI;
+    public EnemyUIManager enemyUI;
     public PlayerManager player;
     public EnemyManager enemy;
 
@@ -13,8 +15,10 @@ public class BattleManager : MonoBehaviour
     {
         // Player‚ªEnemy‚ÉUŒ‚
         player.Attack(enemy);
+        enemyUI.UpdateUI(enemy);
         // Enemy‚ªPlayer‚ÉUŒ‚
         enemy.Attack(player);
+        playerUI.UpdateUI(player);
     }
 
     // Update is called once per frame
