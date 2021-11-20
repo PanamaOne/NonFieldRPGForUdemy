@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public new string name;
+    public int hp;
+    public int at;
+
+    // 攻撃する
+    public void Attack(PlayerManager player)
     {
-        
+        player.Damage(at);
     }
 
-    // Update is called once per frame
-    void Update()
+    // ダメージを受ける
+    public void Damage(int damage)
     {
-        
+        hp -= damage;
+        Debug.Log("EnemyのHPは" + hp);
+    }
+
+    public void OnTap()
+    {
+        Debug.Log("クリックされた");
     }
 }
