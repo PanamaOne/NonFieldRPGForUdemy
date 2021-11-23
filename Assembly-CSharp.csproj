@@ -56,13 +56,14 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\EnemyManager.cs" />
-    <Compile Include="Assets\Scripts\StageUIManager.cs" />
-    <Compile Include="Assets\Scripts\QuestManager.cs" />
-    <Compile Include="Assets\Scripts\PlayerUIManager.cs" />
-    <Compile Include="Assets\Scripts\EnemyUIManager.cs" />
-    <Compile Include="Assets\Scripts\BattleManager.cs" />
-    <Compile Include="Assets\Scripts\PlayerManager.cs" />
+    <Compile Include="Assets\Scripts\Quest\EnemyManager.cs" />
+    <Compile Include="Assets\Scripts\Quest\StageUIManager.cs" />
+    <Compile Include="Assets\Scripts\Quest\BattleManager.cs" />
+    <Compile Include="Assets\Scripts\Quest\PlayerUIManager.cs" />
+    <Compile Include="Assets\Scripts\Quest\EnemyUIManager.cs" />
+    <Compile Include="Assets\Scripts\Quest\QuestManager.cs" />
+    <Compile Include="Assets\Scripts\Quest\PlayerManager.cs" />
+    <Compile Include="Assets\Scripts\SceneTransitionManager.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Aekashics Librarium - Megapack III\Terms of use.txt" />
