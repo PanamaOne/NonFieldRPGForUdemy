@@ -11,8 +11,8 @@ public class TownManager : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
-        
+    { 
+        DialogTextManager.instance.SetScenarios(new string[] { "äXÇ…íÖÇ¢ÇΩÅB" });
     }
 
     // Update is called once per frame

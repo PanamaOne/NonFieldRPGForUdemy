@@ -155,3 +155,4 @@ MonoBehaviour:
   name: Cat
   hp: 40
   at: 10
+  hitEffect: {fileID: 2793025533606383706, guid: 9971d832bc297894d8fa6bbd8d183ebe, type: 3}

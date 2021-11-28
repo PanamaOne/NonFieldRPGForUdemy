@@ -17,6 +17,7 @@ public class BattleManager : MonoBehaviour
     {
         enemyUI.gameObject.SetActive(false);
         //StartCoroutine(SampleCol());
+        playerUI.SetupUI(player);
     }
 
     // サンプルコルーチン
@@ -45,7 +46,10 @@ public class BattleManager : MonoBehaviour
         StopAllCoroutines();
         // PlayerがEnemyに攻撃
         SoundManager.instance.PlaySE(1);
-        player.Attack(enemy);
+        int damage = player.Attack(enemy);
+        DialogTextManager.instance.SetScenarios(new string[] {
+            "Playerの攻撃\nモンスターに" + damage + "ダメージを与えた。"
+        });
         enemyUI.UpdateUI(enemy);
         if(enemy.hp <= 0)
         {
@@ -59,18 +63,29 @@ public class BattleManager : MonoBehaviour
 
     IEnumerator EnemyTurn()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         SoundManager.instance.PlaySE(1);
         // EnemyがPlayerに攻撃
-        enemy.Attack(player);
+        int damage = enemy.Attack(player);
         playerDamegePanel.DOShakePosition(0.3f, 0.5f, 20, 0, false, true);
         playerUI.UpdateUI(player);
+        DialogTextManager.instance.SetScenarios(new string[] { 
+            "モンスターの攻撃\nプレイヤーは" + damage + "ダメージを受けた。"
+        });
+        if(player.hp <= 0)
+        {
+            // Playerが死んだ場合の実装
+            yield return new WaitForSeconds(2f);
+            questManager.PlayerDeath();
+        }
     }
 
     IEnumerator EndBattle()
     {
-        yield return new WaitForSeconds(1f);
-
+        yield return new WaitForSeconds(2f);
+        DialogTextManager.instance.SetScenarios(new string[] {
+            "モンスターは逃げて行った。"
+        });
         Destroy(enemy.gameObject);
         enemyUI.gameObject.SetActive(false);
         SoundManager.instance.PlayBGM("Quest");
