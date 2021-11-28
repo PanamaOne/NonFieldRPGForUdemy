@@ -9,7 +9,7 @@ public class StageUIManager : MonoBehaviour
     public Text stageText;
     public GameObject nextButton;
     public GameObject toTownButton;
-    public GameObject stageClearText;
+    public GameObject stageClearImage;
 
     public void UpdateUI(int currentStage)
     {
@@ -25,7 +25,7 @@ public class StageUIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        stageClearText.SetActive(false);
+        stageClearImage.SetActive(false);
     }
 
     // Update is called once per frame
@@ -36,7 +36,7 @@ public class StageUIManager : MonoBehaviour
 
     public void ShowClearText()
     {
-        stageClearText.SetActive(true);
+        stageClearImage.SetActive(true);
         nextButton.SetActive(false);
         toTownButton.SetActive(true);
     }
